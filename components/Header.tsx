@@ -46,7 +46,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
            <img
-  src="/favicon.ico"
+  src="/favicon.png"
   alt="GenStub logo"
   width={32}
   height={32}
