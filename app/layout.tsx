@@ -51,15 +51,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
         />
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXK4CDV5EE"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-WXK4CDV5EE');
-        </script>
+       {/* Google Analytics */}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WXK4CDV5EE" />
+<script dangerouslySetInnerHTML={{ __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WXK4CDV5EE');
+`}} />
       </head>
       <body className="bg-cream font-dm text-charcoal" suppressHydrationWarning>
         <Header />
