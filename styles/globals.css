@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0B1F3A;
+  --teal: #0CC8A8;
+  --cream: #F9F7F4;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent horizontal overflow site-wide */
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #F9F7F4;
+  color: #1C2B3A;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Prevent any element from breaking out horizontally */
+img, video, canvas, svg {
+  max-width: 100%;
+}
+
+/* Document print styles */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #EFECE8; }
+::-webkit-scrollbar-thumb { background: #8FA3B1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0B1F3A; }
+
+/* Hide scrollbar but keep scroll functionality (for country chips) */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Selection */
+::selection { background: #0CC8A8; color: #0B1F3A; }
+
+/* Animations */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.opacity-0 { opacity: 0; }
+
+/* Form focus */
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #0CC8A8;
+  outline-offset: 0px;
+}
+
+/* Noise texture overlay */
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Hero section — always relative so noise overlay positions correctly */
+.noise-bg { position: relative; }
+
+/* Document font */
+.doc-font { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; }
+
+/* Prose styles for blog/content pages */
+.prose h2 { margin-top: 2rem; margin-bottom: 0.75rem; }
+.prose h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.prose ul { padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.25rem; }
+.prose a { color: #0CC8A8; }
+.prose a:hover { text-decoration: underline; }
+
+/* Mobile: ensure form inputs don't cause zoom on iOS */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
