@@ -45,13 +45,9 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-           <img
-  src="/favicon.png"
-  alt="GenStub logo"
-  width={32}
-  height={32}
-  className="rounded-lg group-hover:scale-105 transition-transform"
-/>
+           <div className="w-8 h-8 bg-teal-brand rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform flex-shrink-0">
+  <span className="font-fraunces font-bold text-navy text-sm">G</span>
+</div>
             <span className="font-fraunces font-semibold text-xl text-white tracking-tight">
               Gen<span className="text-teal-brand">Stub</span>
             </span>
